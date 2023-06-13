@@ -1,3 +1,12 @@
+@font-face {
+    font-family: myfont;
+    src: url(assets/PTMono-Regular.ttf);
+}
+
+#body {
+    font-family: myfont;
+}
+
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -19,6 +28,7 @@ svg {
     display: flex;
     align-items: center;
     gap: 7px;
+    padding-top: 1vh;
 }
 
 .dashboard-text {
@@ -239,9 +249,51 @@ hr {
 .trending {
     padding: 2vw;
 }
+.menu-icon {
+    display: none;
+}
+.close {
+    display: none;
+}
 
 @media screen and (max-width:500px) {
     .nav {
         display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .dashboard {
+        display: flex;
+        flex-direction: column;
+    }
+    .search-icon {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        z-index: 100;
+    }
+    input {
+        display: none;
+    }
+    .bottom {
+        display: flex;
+        flex-direction: column;
+    }
+    span.name {
+        display: none;
+    }
+    .top {
+        display: flex;
     }
 }
